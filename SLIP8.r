@@ -1,17 +1,70 @@
-##SLIP - 8
-##Q.1
-v1 <- c(1,2,3,4,5)
-v2 <- c(3,4,5,6,7)
+##Slip - 8
 
-df <- data.frame(v1,v2)
+##Q.1 - (A)
+Name = c("Geeta","Arun","Vivek","Riddhi","Sanika")
+Age = c(12,14,13,16,11)
 
-unique(df)
-df[duplicated(df),]
+df = data.frame(Name,Age); df
 
-##Q.2
-x <- c(1.8,1.9,2.5,1.4,1.3,2.1,2.3)
-y <- c(200,270,450,160,90,440,380)
+df$Name[df$Age > 13]
 
-model <- lm(y~x)
+##Q.1 - (B)
+data = read.csv("data.csv"); 
+data
 
-predict(model, data.frame(x=2))
+##Q.2 - A
+
+m = 2.4
+
+dpois(4,m)
+
+ppois(3,m)
+
+ppois(2,m) - ppois(1,m)
+
+##Q.2 - B
+
+x = rchisq(40,10)
+
+mean(x)
+
+##Q.3 - A
+lb = c(60,80,100,120,140,160,180)
+ub = c(80,100,120,140,160,180,200)
+f = c(4,6,10,16,12,7,3)
+
+x = (lb+ub)/2; x
+
+n = sum(f); n
+
+y = rep(x,f)
+
+mean(y)
+
+exp(mean(log(y)))
+
+length(y)/sum(1/y)
+
+median(y)
+
+quantile(y,0.75)
+
+quantile(y,0.40)
+
+var(y)
+
+##Q.4 - A
+A = c(120,114,162,172,136,140,158)
+B = c(272,260,240,214,246,234,230)
+
+cor(A,B)
+
+plot(A,B,main="Scatter Plot",xlab="Share A",ylab="Share B")
+
+##Q.4 - B
+
+country = c("India","Israel","China","USA","Pakistan","France","Russia","Japan")
+rate = c(29,21,19,16,40,13,11,10)
+
+barplot(rate,names.arg=country,col="blue",
+        main="Birth Rate",xlab="Country",ylab="Rate")

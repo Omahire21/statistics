@@ -1,17 +1,68 @@
-##SLIP - 6
-##Q.1
-marks <- c(45,70,90,66,89)
-subjects <- c("M1","S1","C1","C2","IKS")
+##Slip - 6
 
-barplot(marks, names.arg=subjects, col="blue",
-        main="Bar Plot of Marks")
+##Q.1 - (A)
 
-##Q.2
-x <- c(5,7,3,8,6,9)
-y <- c(80,85,60,90,75,95)
+v1 = rep(6,8); v1
 
-cor(x,y)
+v2 = rep(2:4,3); v2
 
-plot(x,y, main="Scatter Plot",
-     xlab="Study Hours",
-     ylab="Exam Score")
+v = c(v1,v2); v
+
+length(v)
+
+head(v,6)
+
+tail(v,6)
+
+##Q.1 - (B)
+
+x = c(12,15,18,20,22,24,26,28,30,32,34,36)
+
+hist(x,main="Histogram",xlab="Values",ylab="Frequency",col="lightblue")
+
+##Q.2 - A
+x = c(5,8,12,15,18,22,25,28,30)
+
+summary(x)
+
+fivenum(x)
+
+## Q.2 - B 
+
+m = 0.6
+
+dpois(2,m)
+
+ppois(1,m)   # for k
+
+ppois(6,m) - ppois(2,m)
+
+##Q.3
+X = c(10,12,15,18,20,25)
+Y = c(20,22,28,30,35,40)
+
+cor(X,Y)
+
+model = lm(Y ~ X)
+model
+
+predict(model,data.frame(X=17))
+
+##Q.4 - A
+x = seq(0.1,8,0.1)
+
+y = dchisq(x,10)
+
+plot(x,y,type="l",main="Chi-square df=10",xlab="x",ylab="Density")
+
+##Q.4 - B
+x = c(45,50,55,60,48,52,58,62,88,35)
+
+mean(x)
+
+var(x)
+
+sd(x)
+
+cv = (sd(x)/mean(x))*100;
+cv

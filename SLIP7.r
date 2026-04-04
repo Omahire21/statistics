@@ -1,20 +1,62 @@
-##SLIP - 7
-##Q.1
-name <- c("A","B","C","D","E")
-gender <- c("M","F","M","F","M")
-age <- c(25,30,28,22,35)
-desg <- c("Dev","HR","Mgr","Dev","CEO")
+##Slip - 7
 
-df <- data.frame(name,gender,age,desg)
+##Q.1 - (A)
+A = c(17,18,16,18.5,17.8,16.9,17.6,16.6,20,18.6)
+B = c(20,19,17,18,18.5,17.2,19,17.5,21,19.3)
 
-df[order(df$name),]
+mean(A)
+mean(B)
 
-##Q.2
-d <- c(20,32,45,21,19,23,47,67,34)
-s <- c(16,38,54,25,20,20,42,66,40)
+##Q.1 - (B)
 
-cor(d,s)
+x = c(3,5,8,8,9,11,12,12,13,13,16)
 
-plot(d,s, main="Demand vs Supply",
-     xlab="Demand",
-     ylab="Supply")
+var(x)
+
+sd(x)
+
+##Q.2 - A
+
+X = c(10,12,14,16,18,20)
+Y = c(15,18,21,25,27,30)
+
+cor(X,Y)
+
+model = lm(Y ~ X)
+model
+
+predict(model,data.frame(X=17))
+
+##Q.3 - A
+x = c(12,15,18,20,22,25,28,30)
+
+stem(x)
+
+boxplot(x,main="Box Plot",ylab="Values")
+
+##Q.3 - B
+
+n = 6
+p = 0.35
+
+1 - pbinom(1,n,p)
+
+pbinom(1,n,p)
+
+1 - dbinom(6,n,p)
+
+##Q.4 - A
+x = c(33,41,29,30,40,51,33,24,22,21)
+
+exp(mean(log(x)))
+
+length(x)/sum(1/x)
+
+quantile(x,0.7)
+
+##Q.4 - B
+t = seq(-15,5,0.5)
+
+y = dt(t,15)
+
+plot(t,y,type="l",main="t-distribution df=15",xlab="t",ylab="Density")
